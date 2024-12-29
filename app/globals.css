@@ -1,42 +1,118 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Yo sab design ho. */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: inherit;
+/* Body ko design ho. */
+body {
+  background-color: #f4f4f4; 
+  color: #333; 
+  font-size: 16px; 
+  line-height: 1.6; 
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px;
+}
+
+/* Button ko design ho. */
+button {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Product Card ko design ho. */
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .product-info {
+  padding: 15px;
+}
+
+.product-card .product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-card .product-price {
+  font-size: 1.1rem;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.product-card .product-description {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.product-card .view-details {
+  color: #3498db;
+  font-weight: bold;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.product-card .view-details:hover {
+  text-decoration: underline;
+}
+
+/* Product Grid ko design ho. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
+
+/* Loading Spinner ko design. */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #3498db;
 }
